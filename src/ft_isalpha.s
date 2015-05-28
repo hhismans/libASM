@@ -1,6 +1,6 @@
 section .text
 
-	global _isalpha
+	global _ft_isalpha
 	
 	_ft_isalpha:
 		cmp rdi, 'A'
@@ -13,7 +13,7 @@ section .text
 		cmp rdi, 'z'
 		jle retTrue
 
-		retFalse
+		jmp retFalse
 	
 	retTrue:
 		mov rax, 1
