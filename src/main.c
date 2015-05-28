@@ -6,7 +6,7 @@
 /*   By: hhismans <hhismans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/28 05:22:53 by hhismans          #+#    #+#             */
-/*   Updated: 2015/05/28 05:25:48 by hhismans         ###   ########.fr       */
+/*   Updated: 2015/05/28 05:35:32 by hhismans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,23 @@
 int main(void)
 {
 	int i;
-	char tab[] = "salut";
+	
 	i = 0;
 
 	while (i < 200)
 	{
-		if (isalnum(i) != ft_isalnum(i))
+		if (isalpha(i) != ft_isalpha(i))
 		{
 			printf("ERROR isalnum\n");
 		}
 		i++;
+	}
+
+	while (i < 200)
+	{
+		if (isdigit(i) != ft_isdigit(i))
+		{
+			printf("ERROR isalnum\n");
+		}
 	}
 }
