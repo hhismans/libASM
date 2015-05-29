@@ -9,9 +9,10 @@ section .text
 		jg retFalse
 
 		jmp toUpper
-	
 	toUpper:
-		mov rax, rdi - 'a' + 'A'
+		sub rdi, 'a'
+		add rdi, 'A'
+		mov rax, rdi
 		ret
 	
 	retFalse:

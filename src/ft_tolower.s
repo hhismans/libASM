@@ -11,7 +11,9 @@ section .text
 		jmp toUpper
 	
 	toUpper:
-		mov rax, rdi - 'A' + 'a'
+		sub rdi, 'A'
+		add rdi, 'a'
+		mov rax, rdi
 		ret
 	
 	retFalse:

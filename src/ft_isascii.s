@@ -1,11 +1,11 @@
 section .text
 
-	global _ft_isprint
+	global _ft_isascii
 	
-	_ft_isprint:
-		cmp rdi, ' '
+	_ft_isascii:
+		cmp rdi, 0
 		jl retFalse
-		cmp rdi, '~'
+		cmp rdi, 127
 		jle retTrue
 
 		jmp retFalse

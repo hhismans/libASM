@@ -1,27 +1,28 @@
-content .text
+section .text
 
 	global _ft_strcat
 
 	_ft_strcat:
-		push rdi;
+		push rdi
 		jmp part1
 	part1:
 		cmp byte [rdi], 0
 		je cat
 		inc rdi
-		jmp part1 
+		jmp part1
 
 	cat:
 		cmp byte [rsi], 0
 		je add
-		end
+		jmp end
 	add:
-		mov byte [rdi], byte [rsi]
+		mov r8, [rsi]
+		mov [rdi], r8
 		inc rdi
 		inc rsi
 		jmp cat
 
 	end:
-		mov [rdi], 0
-		pop rax;
+		mov [rdi], byte 0
+		pop rax
 		ret

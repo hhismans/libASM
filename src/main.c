@@ -6,33 +6,37 @@
 /*   By: hhismans <hhismans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/28 05:22:53 by hhismans          #+#    #+#             */
-/*   Updated: 2015/05/28 05:35:32 by hhismans         ###   ########.fr       */
+/*   Updated: 2015/05/29 05:57:16 by hhismans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libasm.h"
+#include "testasm.h"
+#include "libft.h"
 
 int main(void)
 {
 	int i;
-	
+	t_flags fct_tab[]={
+		{"ft_bzero", test_bzero},
+		{"ft_isdigit", test_isdigit},
+		{"ft_isalpha", test_isalpha},
+		{"ft_isalnum", test_isalnum},
+		{"ft_isprint", test_isprint},
+		{"ft_isascii", test_isascii},
+		{"ft_toupper", test_toupper},
+		{"ft_tolower", test_tolower},
+		{"ft_strcat", test_strcat},
+		{"", NULL}
+	};
+
 	i = 0;
-
-	while (i < 200)
+	while(*(fct_tab[i].flag))
 	{
-		if (isalpha(i) != ft_isalpha(i))
-		{
-			printf("ERROR isalnum\n");
-		}
+		ft_putstr(fct_tab[i].flag);
+		if (!fct_tab[i].p())
+			ft_putendl("\t OK!");
 		i++;
-	}
-
-	while (i < 200)
-	{
-		if (isdigit(i) != ft_isdigit(i))
-		{
-			printf("ERROR isalnum\n");
-		}
 	}
 }

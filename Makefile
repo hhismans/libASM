@@ -6,7 +6,7 @@
 #    By: hhismans <hhismans@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/03/20 01:01:15 by hhismans          #+#    #+#              #
-#    Updated: 2015/05/28 09:18:52 by hhismans         ###   ########.fr        #
+#    Updated: 2015/05/29 06:02:28 by hhismans         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,11 @@ SRC = src/ft_bzero.s \
 	  src/ft_isalpha.s \
 	  src/ft_isdigit.s \
 	  src/ft_isalnum.s \
+	  src/ft_isprint.s \
 	  src/ft_isascii.s \
 	  src/ft_toupper.s \
 	  src/ft_tolower.s \
+	  src/ft_strcat.s \
 
 DEL = rm -f
 
@@ -33,12 +35,13 @@ CC = gcc
 
 NASM = ~/.brew/bin/nasm -f macho64
 
-LIB = -I./includes
+LIB = -I./includes -I./libft
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@gcc -o $(NAME) $(FLAG) $(OBJ) src/main.c $(LIB)
+	@make -C libft
+	gcc -o $(NAME) $(FLAG) $(OBJ) libft/libft.a src/main.c src/testasm.c $(LIB)
 	@echo
 	@echo "make -> $@ created"
 	@echo
