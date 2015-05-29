@@ -5,21 +5,9 @@ section .text
 
 	_ft_puts:
 		push rax
-		call _strlen
+		call _ft_strlen
+		mov rsi, rdi
 		mov rdi, 1
-		mov, rsi, rcx
-		mov rax,
-		mov r8, 0
-		jmp while
-
-	while:
-		cmp byte [rdi], 0
-		je affich
-		while
-
-	incr8:
-		inc r8
-		while
-
-	affich:
-		
+		mov rax, 0x2000004
+		syscall
+		pop rax

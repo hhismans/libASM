@@ -17,5 +17,6 @@ int		ft_isdigit(int size);
 int		ft_isalnum(int size);
 int		ft_isprint(int size);
 int		ft_isascii(int size);
+int		ft_puts(char *size);
 
 #endif

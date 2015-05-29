@@ -6,7 +6,7 @@
 /*   By: hhismans <hhismans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/28 23:45:06 by hhismans          #+#    #+#             */
-/*   Updated: 2015/05/29 07:31:40 by hhismans         ###   ########.fr       */
+/*   Updated: 2015/05/29 12:02:33 by hhismans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,5 +186,20 @@ int	test_strcat(void)
 		}
 		i++;
 	}
+	return (0);
+}
+
+int	test_puts(void)
+{
+	char tmp[1000];
+
+	ft_putstr("so it begins ! ");
+	ft_bzero(tmp ,1000);
+	freopen("/dev/null", "a", stdout);
+	ft_putstr("caca ! ");
+	setbuf(stdout, tmp);
+	fclose(stdout);
+	ft_putstr("attentihjui");
+	ft_putendl_fd(tmp, 2); 
 	return (0);
 }

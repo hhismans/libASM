@@ -6,7 +6,7 @@
 /*   By: hhismans <hhismans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/28 05:22:53 by hhismans          #+#    #+#             */
-/*   Updated: 2015/05/29 05:57:16 by hhismans         ###   ########.fr       */
+/*   Updated: 2015/05/29 10:11:41 by hhismans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int main(void)
 		{"ft_toupper", test_toupper},
 		{"ft_tolower", test_tolower},
 		{"ft_strcat", test_strcat},
+		{"ft_puts", test_puts},
 		{"", NULL}
 	};
 

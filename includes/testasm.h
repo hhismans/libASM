@@ -6,7 +6,7 @@
 /*   By: hhismans <hhismans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 00:06:50 by hhismans          #+#    #+#             */
-/*   Updated: 2015/05/29 05:58:43 by hhismans         ###   ########.fr       */
+/*   Updated: 2015/05/29 10:08:19 by hhismans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define TESTASM_H
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int test_bzero(void);
 int	test_isalpha(void);
@@ -24,4 +25,5 @@ int	test_isprint(void);
 int	test_toupper(void);
 int	test_tolower(void);
 int	test_strcat(void);
+int	test_puts(void);
 #endif
