@@ -6,7 +6,7 @@
 /*   By: hhismans <hhismans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/28 23:45:06 by hhismans          #+#    #+#             */
-/*   Updated: 2015/05/29 12:02:33 by hhismans         ###   ########.fr       */
+/*   Updated: 2015/05/31 03:01:11 by hhismans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,5 +201,75 @@ int	test_puts(void)
 	fclose(stdout);
 	ft_putstr("attentihjui");
 	ft_putendl_fd(tmp, 2); 
+	return (0);
+}
+
+int	test_strlen(void)
+{
+	int i;
+	char test[6][100] = {"sluat","daskdjh","","caca","pou","to"};
+
+	i = 0;
+	while (i < 6)
+	{
+		if (ft_strlen(test[i]) != strlen(test[i]))
+		{
+			ft_putstr(" Error with string -> ");
+			ft_putnbr(ft_strlen(test[i]));
+			ft_putendl(test[i]);
+			return (1);
+		}
+		i++;
+	}
+	return (0);
+}
+
+int	test_memset(void)
+{
+	char test[101] = "salutudfsdfdshb f ";
+	char test2[101] = "blublublbulbulbulbub";
+	char *tmp;
+
+	memset(test, 'a', 100);
+	tmp = ft_memset(test2, 'a', 100);
+	test[100] = 0;
+	test2[100] = 0;
+	if (strcmp(test, test2))
+	{
+		ft_putendl(test);
+		ft_putendl(test2);
+		ft_putendl(" Error !");
+		return (1);
+	}
+	if (tmp != test2)
+	{
+		ft_putendl("Error wrong return value");
+		return (1);
+	}
+	return (0);
+}
+
+int	test_memcpy(void)
+{
+	char test[101] = "salutudfsdfdshb f ";
+	char test2[101] = "blublublbulbulbulbub";
+	char *tmp;
+
+	memset(test, 'a', 89);
+	tmp = ft_memset(test2, 'a', 89);
+	test[100] = 0;
+	test2[100] = 0;
+	if (strncmp(test, test2, 89))
+	{
+		ft_putendl(test);
+		ft_putendl(test2);
+		ft_putendl(" Error !");
+		return (1);
+	}
+	if (tmp != test2)
+	{
+		ft_putendl("Error wrong return value");
+		return (1);
+	}
 	return (0);
 }

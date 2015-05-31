@@ -6,7 +6,7 @@
 #    By: hhismans <hhismans@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/03/20 01:01:15 by hhismans          #+#    #+#              #
-#    Updated: 2015/05/29 09:23:53 by hhismans         ###   ########.fr        #
+#    Updated: 2015/05/31 02:27:10 by hhismans         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,8 @@ SRC = src/ft_bzero.s \
 	  src/ft_tolower.s \
 	  src/ft_strcat.s \
 	  src/ft_puts.s \
+	  src/ft_strlen.s \
+	  src/ft_memset.s \
 
 DEL = rm -f
 

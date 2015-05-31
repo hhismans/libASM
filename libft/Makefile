@@ -6,7 +6,7 @@
 #    By: hhismans <hhismans@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/06 13:15:27 by hhismans          #+#    #+#              #
-#    Updated: 2015/05/29 01:22:45 by hhismans         ###   ########.fr        #
+#    Updated: 2015/05/31 01:39:51 by hhismans         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all, clean, fclean, re
@@ -66,7 +66,6 @@ SRC		=	\
 			ft_lstdelone.c \
 			ft_lstdel.c \
 			ft_lstadd.c \
-			ft_strlen.c \
 			ft_lstiter.c \
 			ft_lstmap.c \
 			ft_abs.c \
@@ -89,7 +88,7 @@ $(NAME): $(OBJ)
 	@echo "Library $@ indexed.\033[37m"
 
 %.o: %.c $(SRH)
-	@$(CC) $(CFLAGS) -o $@ -c $< -I.
+	@$(CC) $(CFLAGS) -o $@ -c $< -I. -I../includes
 	@echo "\033[36mCompilation of \033[1m" $< "\033[0m\033[32m done. \033[37m"
 clean:
 	@rm -f $(OBJ)

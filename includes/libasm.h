@@ -18,5 +18,8 @@ int		ft_isalnum(int size);
 int		ft_isprint(int size);
 int		ft_isascii(int size);
 int		ft_puts(char *size);
+size_t	ft_strlen(const char *size);
+void	*ft_memset(void *size, int i, size_t len);
+void	*ft_memcpy(const void *size,const void * i, size_t len);
 
 #endif

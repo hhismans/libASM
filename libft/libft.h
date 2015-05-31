@@ -6,7 +6,7 @@
 /*   By: hhismans <hhismans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 13:32:34 by hhismans          #+#    #+#             */
-/*   Updated: 2015/03/19 21:26:46 by hhismans         ###   ########.fr       */
+/*   Updated: 2015/05/31 03:02:57 by hhismans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # define BUFF_SIZE 4096
 # include <string.h>
+# include "libasm.h"
 
 typedef struct	s_list
 {
@@ -32,9 +33,7 @@ void			ft_putlongnbr(long int nb);
 void			ft_putnbrndl(int nb);
 void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);
-void			*ft_memset(void *b, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
-void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memchr(const void *s, int c, size_t n);
@@ -42,7 +41,6 @@ int				ft_memcmp(const void *s1, const void *s2, size_t n);
 char			*ft_strdup(const char *s1);
 char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strncpy(char *dst, const char *srci, size_t n);
-size_t			ft_strlen(const char *str);
 char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strncat(char *s1, const char *s2, size_t n);
 size_t			ft_strlcat(char *s1, const char *s2, size_t n);

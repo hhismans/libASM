@@ -6,7 +6,7 @@
 /*   By: hhismans <hhismans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/29 00:06:50 by hhismans          #+#    #+#             */
-/*   Updated: 2015/05/29 10:08:19 by hhismans         ###   ########.fr       */
+/*   Updated: 2015/05/31 03:01:41 by hhismans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,7 @@ int	test_toupper(void);
 int	test_tolower(void);
 int	test_strcat(void);
 int	test_puts(void);
+int	test_strlen(void);
+int	test_memset(void);
+int	test_memcpy(void);
 #endif
