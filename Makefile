@@ -6,12 +6,12 @@
 #    By: hhismans <hhismans@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/03/20 01:01:15 by hhismans          #+#    #+#              #
-#    Updated: 2015/05/31 02:27:10 by hhismans         ###   ########.fr        #
+#    Updated: 2015/06/09 11:19:11 by hhismans         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = ASMtest
+NAME = libfts.a
 
 SRC = src/ft_bzero.s \
 	  src/ft_isalpha.s \
@@ -25,6 +25,9 @@ SRC = src/ft_bzero.s \
 	  src/ft_puts.s \
 	  src/ft_strlen.s \
 	  src/ft_memset.s \
+	  src/ft_memcpy.s \
+	  src/ft_strdup.s \
+	  src/ft_cat.s \
 
 DEL = rm -f
 
@@ -44,7 +47,8 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@make -C libft
-	gcc -o $(NAME) $(FLAG) $(OBJ) libft/libft.a src/main.c src/testasm.c $(LIB)
+	ar rc $@ $(OBJ) libft/libft.a
+	#gcc -o $(NAME) $(FLAG) $(OBJ) libft/libft.a src/main.c src/testasm.c $(LIB)
 	@echo
 	@echo "make -> $@ created"
 	@echo

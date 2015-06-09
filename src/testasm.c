@@ -6,7 +6,7 @@
 /*   By: hhismans <hhismans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/28 23:45:06 by hhismans          #+#    #+#             */
-/*   Updated: 2015/05/31 03:01:11 by hhismans         ###   ########.fr       */
+/*   Updated: 2015/06/09 10:58:02 by hhismans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,16 +191,8 @@ int	test_strcat(void)
 
 int	test_puts(void)
 {
-	char tmp[1000];
-
-	ft_putstr("so it begins ! ");
-	ft_bzero(tmp ,1000);
-	freopen("/dev/null", "a", stdout);
-	ft_putstr("caca ! ");
-	setbuf(stdout, tmp);
-	fclose(stdout);
-	ft_putstr("attentihjui");
-	ft_putendl_fd(tmp, 2); 
+	ft_puts("OKdd !");
+	ft_puts(0);
 	return (0);
 }
 
@@ -255,8 +247,7 @@ int	test_memcpy(void)
 	char test2[101] = "blublublbulbulbulbub";
 	char *tmp;
 
-	memset(test, 'a', 89);
-	tmp = ft_memset(test2, 'a', 89);
+	tmp = ft_memcpy(test2, test, 89);
 	test[100] = 0;
 	test2[100] = 0;
 	if (strncmp(test, test2, 89))
@@ -270,6 +261,30 @@ int	test_memcpy(void)
 	{
 		ft_putendl("Error wrong return value");
 		return (1);
+	}
+	return (0);
+}
+
+int test_strdup(void)
+{
+	char test[10][10] = {"salut","coucou","","caca", "crote !", "proute!", "dasd", "cocou", "ddd", "pipi"};
+	char *tmp;
+	int i;
+
+	i = 0;
+	while (i < 10)
+	{
+		tmp = ft_strdup(test[i]);
+		if (strcmp(tmp, test[i]))
+		{
+			free(tmp);
+			ft_putstr(test[i]);
+			ft_putstr(tmp);
+			ft_putendl(" Error");
+			return (1);
+		}
+		free(tmp);
+		i++;
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hhismans <hhismans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/28 05:22:53 by hhismans          #+#    #+#             */
-/*   Updated: 2015/05/31 03:03:55 by hhismans         ###   ########.fr       */
+/*   Updated: 2015/06/09 10:07:53 by hhismans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int main(void)
 		{"ft_strlen", test_strlen},
 		{"ft_memset", test_memset},
 		{"ft_memcpy", test_memcpy},
-	//	{"ft_puts", test_puts},
+		{"ft_strdup", test_strdup},
+		{"ft_puts", test_puts},
 		{"", NULL}
 	};
 

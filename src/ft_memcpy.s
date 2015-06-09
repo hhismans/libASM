@@ -4,18 +4,7 @@ section .text
 
 	_ft_memcpy:
 		push rdi
-		jmp while
-	
-	while:
-		cmp rdx, 0
-		je end
-		dec rdx
-		mov r8, byte [rsi]
-		mov [rdi], byte r8
-		inc rsi
-		inc rdi
-		jmp while
-
-	end:
+		mov rcx, rdx
+		rep movsb
 		pop rax
 		ret

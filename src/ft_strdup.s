@@ -3,27 +3,23 @@ section .text
 	global _ft_strdup
 	extern _malloc
 	extern _ft_strlen
+	extern _ft_memcpy
 
 	_ft_strdup:
+		push rbp
+		mov rbp, rsp
+
+		push rdi		;push of source
+
 		call _ft_strlen
-		push rdi
+		inc rax
+		push rax		;push of len
 		mov rdi, rax
-		inc rdi
 		call _malloc
-		mov r8, rax
-		pop rdi
-		jmp while
+		mov rdi, rax
+		pop rdx			;pop of len
+		pop rsi			;pop of source
+		call _ft_memcpy
 
-		while:
-			cmp rsi, 0
-			je end
-			mov [rsi], byte rdi
-			mov [rdi], byte rsi
-			inc rsi
-			inc rdi
-			while
-
-		end:
-			inc rdi
-			mov rax, r8
-			ret
+	leave
+		ret
