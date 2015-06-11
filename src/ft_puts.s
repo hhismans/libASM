@@ -32,7 +32,7 @@ section .text
 		mov rax, 0x2000004
 		mov rdx, 7
 		syscall
-		mov rax, -1
+		mov rax, 1
 		jmp _end
 
 	_end:

@@ -6,7 +6,7 @@
 /*   By: hhismans <hhismans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 13:32:34 by hhismans          #+#    #+#             */
-/*   Updated: 2015/05/31 03:02:57 by hhismans         ###   ########.fr       */
+/*   Updated: 2015/06/11 21:54:19 by hhismans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int				ft_memcmp(const void *s1, const void *s2, size_t n);
 char			*ft_strdup(const char *s1);
 char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strncpy(char *dst, const char *srci, size_t n);
-char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strncat(char *s1, const char *s2, size_t n);
 size_t			ft_strlcat(char *s1, const char *s2, size_t n);
 char			*ft_strchr(const char *s, int c);

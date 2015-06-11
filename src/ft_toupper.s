@@ -16,5 +16,6 @@ section .text
 		ret
 	
 	retFalse:
+		mov rax, rdi
 		ret
 	

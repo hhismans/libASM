@@ -6,7 +6,7 @@
 #    By: hhismans <hhismans@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/03/20 01:01:15 by hhismans          #+#    #+#              #
-#    Updated: 2015/06/09 11:19:11 by hhismans         ###   ########.fr        #
+#    Updated: 2015/06/11 21:50:51 by hhismans         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,9 @@ $(NAME): $(OBJ)
 	@echo "make -> $@ created"
 	@echo
 
+test:
+	@make
+	@gcc libfts.a libft/libft.a -I./includes -I./libft  src/main.c src/testasm.c
 %.o: %.s
 	$(NASM) $<
 	@echo [36mCompilation of[1m $< [0m[32m done [37m

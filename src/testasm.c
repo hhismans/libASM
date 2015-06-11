@@ -6,7 +6,7 @@
 /*   By: hhismans <hhismans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/28 23:45:06 by hhismans          #+#    #+#             */
-/*   Updated: 2015/06/09 10:58:02 by hhismans         ###   ########.fr       */
+/*   Updated: 2015/06/11 21:40:40 by hhismans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ int	test_bzero(void)
 
 	ft_bzero(tab, 10);
 	bzero(tab2,100);
-	if(!ft_memcmp(tab,tab2, 10))
+	if(ft_memcmp(tab,tab2, 10))
 	{
 		ft_putendl_fd("Error ft_memcmp(tab, tab2, 10)", 2);
 		return (1);
 	}
 	ft_bzero(tab, 100);
 	bzero(tab2, 100);
-	if(!ft_memcmp(tab,tab2, 100))
+	if(ft_memcmp(tab,tab2, 100))
 	{
 		ft_putendl_fd("Error ft_memcmp(tab, tab2, 100)", 2);
 		return (1);
@@ -146,6 +146,8 @@ int	test_tolower(void)
 			ft_putnbrndl(i);
 			return (1);
 		}
+		//printf("ft_tolower(%c) = %c tolower(%c) = %c\n", i, (char)ft_tolower(i), i, (char)tolower(i));
+		//printf("ft_tolower(%d) = %d tolower(%d) = %d\n", i, ft_tolower(i), i, tolower(i));
 		i++;
 	}
 	return (0);
@@ -174,12 +176,15 @@ int	test_strcat(void)
 	char test[10][10000] = {
 		"123456789", "", "fdksjf", "00000000000", "salut","caca", "pipi"
 		"ifghdlfjg", "asdj",""};
+	char test1[10][10000] = {
+		"123456789", "", "fdksjf", "00000000000", "salut","caca", "pipi"
+		"ifghdlfjg", "asdj",""};
 	int j;
 	i = 0;
 	while (i < 1)
 	{
 		j = 1;//rand_a_b(0, 10);
-		if (ft_strcmp(ft_strcat(test[j], "blue"), strcat(test[j], "blue")))
+		if (ft_strcmp(ft_strcat(test[j], "blue"), strcat(test1[j], "blue")))
 		{
 			ft_putendl_fd(" Error", 2);
 			return (1);
@@ -191,8 +196,15 @@ int	test_strcat(void)
 
 int	test_puts(void)
 {
-	ft_puts("OKdd !");
-	ft_puts(0);
+	int ret_orig[2];
+	int ret_cust[2];
+
+	ret_orig[0] = puts("OKdd !");
+	ret_orig[1] = puts(NULL);
+	ret_cust[0] = ft_puts("OKdd !");
+	ret_cust[1] = ft_puts(NULL);
+	printf("ret_orig[NULL] = %d ret_cust[NULL] = %d", ret_orig[1], ret_cust[1]);
+	printf("ret_orig[NULL] = %d ret_cust[NULL] = %d", ret_orig[0], ret_cust[0]);
 	return (0);
 }
 
